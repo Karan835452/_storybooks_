@@ -1,0 +1,30 @@
+<h1> Hello Dash</h1>
+<h1>Welcome {{name}}</h1>
+<p> To story books</p>
+
+{{#if stories}}
+      <table class="striped">
+          <thead>
+              <tr>
+                  <th>Titile</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              {{#each stories}}
+              <tr>
+                  <td><a href="/stories/{{_id}}"></a>{{title}}</td>
+                  <td>{{ formatDate craetedAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                  <td><span class="dash=status">{{status}}</span></td>
+              </tr>
+              {{/each}}
+          </tbody>
+      </table>
+      
+
+{{else}}
+
+<p>You have not created any stories yet</p>
+{{/if}}
